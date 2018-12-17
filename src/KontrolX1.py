@@ -68,9 +68,6 @@ class KontrolX1(ControlSurface):
         ControlSurface._on_selected_track_changed(self)
         selected_track = self.song().view.selected_track
         mixer.channel_strip(0).set_track(selected_track)
-        all_tracks = ((self.song().tracks + self.song().return_tracks) + (self.song().master_track,))
-        index = list(all_tracks).index(selected_track)
-        self.log("selected track changed {}".format(index))
 
     def disconnect(self):
         self.log_message("CLEAN JPS Kontrol")
